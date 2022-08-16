@@ -106,7 +106,7 @@ console.log(precioMenor());
 
 function pizzaInfo() {
   pizzas.forEach((pizza) => {
-    console.log(`La pizza ${pizza.nombre} tiene un precio de ${pizza.precio}`);
+    console.log(`La pizza ${pizza.nombre} tiene un precio de $${pizza.precio}`);
   });
 }
 console.log("----------------------------------------------------");
