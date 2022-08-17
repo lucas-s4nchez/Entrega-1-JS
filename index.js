@@ -79,14 +79,14 @@ const pizzas = [
 // a)
 
 function idImpar() {
-  let impares = [];
-  const pizzasFilter = pizzas
-    .filter((pizza) => pizza.id % 2 !== 0)
-    .forEach((pizza) => (impares = [...impares, pizza.nombre]));
-  return `Las pizzas con id impares son: ${impares}`;
+  console.log("a) Las pizzas que tienen un id impar son: ");
+  pizzas.map((pizza) => {
+    if (pizza.id % 2 !== 0) {
+      console.log(pizza.nombre);
+    }
+  });
 }
-console.log("a) Las pizzas que tengan un id impar.");
-console.log(idImpar());
+idImpar();
 
 // b)
 
@@ -105,7 +105,7 @@ console.log(precioMenor());
 // c)
 
 function pizzaInfo() {
-  pizzas.forEach((pizza) => {
+  pizzas.map((pizza) => {
     console.log(`La pizza ${pizza.nombre} tiene un precio de $${pizza.precio}`);
   });
 }
@@ -116,10 +116,11 @@ pizzaInfo();
 // d)
 
 function mostrarIngredientes() {
-  pizzas.forEach((pizza) => {
-    console.log(
-      `La pizza ${pizza.nombre} tiene los siguientes ingredientes: ${pizza.ingredientes}.`
-    );
+  pizzas.map((pizza) => {
+    console.log(`La pizza ${pizza.nombre} tiene los siguientes ingredientes: `);
+    pizza.ingredientes.forEach((ingrediente) => {
+      console.log(`-${ingrediente}`);
+    });
   });
 }
 console.log("----------------------------------------------------");
